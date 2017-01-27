@@ -5,7 +5,8 @@
   "author": "",
   "private": true,
   "dependencies": {
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "tachyons": "^4.6.2"
   },
   "scripts": {
     "dev": "nuxt",

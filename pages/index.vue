@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pa4">
     {{counter}}
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
