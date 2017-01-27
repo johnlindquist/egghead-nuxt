@@ -1,0 +1,16 @@
+{
+  "name": "egghead-nuxt",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "nuxt": "latest"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  }
+}
