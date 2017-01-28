@@ -10,7 +10,8 @@
       <h1 class="f4 bold center mw6">Todos</h1>
       <ul class="list pl0 ml0 center mw6 ba b--light-silver br2">
         <li v-for="todo of todos" class="flex items-center ph3 pv3 bb b--light-silver">
-          <span class="flex-auto">{{todo.id}}. {{todo.task}}</span>
+          <span v-bind:class="{strike: todo.complete}" class="flex-auto">{{todo.id}}. {{todo.task}}</span>
+          <button @click="toggle(todo)"><img src="https://icon.now.sh/check" alt=""></button>
           <button @click="remove(todo)"><img src="https://icon.now.sh/trash" alt=""></button>
         </li>
       </ul>
@@ -40,7 +41,8 @@ export default {
   methods:{
     ...mapActions([
       'add',
-      'remove'
+      'remove',
+      'toggle'
     ])
   }
 }
