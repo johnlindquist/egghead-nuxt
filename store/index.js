@@ -1,11 +1,9 @@
 export const state = {
-    todos: [
-        { task: "eat" },
-        { task: "sleep" },
-        { task: "code" },
-    ]
+    todos: []
 }
 
 export const mutations = {
-
+    init(state, todos) {
+        state.todos = todos
+    }
 }

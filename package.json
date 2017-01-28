@@ -5,6 +5,7 @@
   "author": "",
   "private": true,
   "dependencies": {
+    "axios": "^0.15.3",
     "nuxt": "latest",
     "tachyons": "^4.6.2"
   },
