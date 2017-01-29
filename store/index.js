@@ -25,20 +25,21 @@ export const mutations = {
 
 export const actions = {
     async add({commit}, task) {
-        const res = await axios.post('https://todos-cuvsmolowg.now.sh/todos',
+        const res = await axios.post(`${process.env.API}`,
             { task, complete: false })
 
         commit('add', res.data)
     },
 
     async remove({commit}, todo) {
-        const res = await axios.delete(`https://todos-cuvsmolowg.now.sh/todos/${todo.id}`)
+        const res = await axios.delete(`${process.env.API}${todo.id}`)
 
         commit('remove', todo)
     },
 
     async toggle({commit}, todo) {
-        const res = await axios.patch(`https://todos-cuvsmolowg.now.sh/todos/${todo.id}`,
+
+        const res = await axios.patch(`${process.env.API}${todo.id}`,
             {
                 complete: !todo.complete
             })

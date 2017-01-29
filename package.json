@@ -6,12 +6,13 @@
   "private": true,
   "dependencies": {
     "axios": "^0.15.3",
+    "env-cmd": "^4.0.0",
     "nuxt": "latest",
     "tachyons": "^4.6.2"
   },
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "env-cmd development nuxt",
+    "build": "env-cmd production nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   }
