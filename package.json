@@ -1,16 +1,24 @@
 {
   "name": "egghead-nuxt",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "",
-  "private": true,
+  "description": "",
+  "main": "index.js",
   "dependencies": {
-    "nuxt": "latest"
+    "nuxt": "^1.3.0"
   },
+  "devDependencies": {},
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnlindquist/egghead-nuxt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnlindquist/egghead-nuxt/issues"
+  },
+  "homepage": "https://github.com/johnlindquist/egghead-nuxt#readme"
 }
