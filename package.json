@@ -1,24 +1,22 @@
 {
   "name": "egghead-nuxt",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "nuxt": "^1.3.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johnlindquist/egghead-nuxt.git"
-  },
-  "keywords": [],
+  "description": "My cat&#39;s meow Nuxt.js project",
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/johnlindquist/egghead-nuxt/issues"
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
-  "homepage": "https://github.com/johnlindquist/egghead-nuxt#readme"
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "@nuxtjs/axios": "^5.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "autoprefixer": "^7.1.6",
+    "tailwindcss": "^0.1.3"
+  }
 }
