@@ -6,6 +6,8 @@ import '../assets/css/tailwind.css'
 
 let layouts = {
 
+  "_custom": () => import('../layouts/custom.vue'  /* webpackChunkName: "layouts/custom" */).then(m => m.default || m),
+
   "_default": () => import('../layouts/default.vue'  /* webpackChunkName: "layouts/default" */).then(m => m.default || m)
 
 }
