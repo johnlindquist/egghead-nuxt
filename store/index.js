@@ -9,10 +9,17 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }, { app }) {
-    const todos = await app.$axios.$get(
-      "http://localhost:3777/todos"
-    )
-    commit("setTodos", todos)
+  async nuxtServerInit(
+    { commit },
+    { app, error }
+  ) {
+    try {
+      const todos = await app.$axios.$get(
+        "http://localhost:3777/todos"
+      )
+      commit("setTodos", todos)
+    } catch (e) {
+      error("Services Offline :(")
+    }
   }
 }
