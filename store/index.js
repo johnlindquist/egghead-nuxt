@@ -1,7 +1,18 @@
 export const state = () => ({
-  todos: ["Eat", "Sleep", "Code"]
+  todos: []
 })
 
-export const mutations = {}
+export const mutations = {
+  setTodos(state, todos) {
+    state.todos = todos
+  }
+}
 
-export const actions = {}
+export const actions = {
+  async nuxtServerInit({ commit }, { app }) {
+    const todos = await app.$axios.$get(
+      "http://localhost:3777/todos"
+    )
+    commit("setTodos", todos)
+  }
+}
