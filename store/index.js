@@ -5,6 +5,14 @@ export const state = () => ({
 export const mutations = {
   setTodos(state, todos) {
     state.todos = todos
+  },
+  toggle(state, todo) {
+    state.todos = state.todos.map(
+      t =>
+        t.id === todo.id
+          ? { ...todo, done: !todo.done }
+          : t
+    )
   }
 }
 
