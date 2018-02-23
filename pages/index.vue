@@ -22,8 +22,8 @@ export default {
     ...mapState(["todos"])
   },
   methods: {
-    ...mapActions([]),
-    ...mapMutations(["toggle"])
+    ...mapActions(["toggle"]),
+    ...mapMutations([])
   }
 }
 </script>
