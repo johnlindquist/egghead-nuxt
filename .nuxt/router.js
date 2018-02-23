@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _475be478 = () => import('../pages/about.vue' /* webpackChunkName: "pages/about" */).then(m => m.default || m)
+const _bd67abfc = () => import('../pages/completed.vue' /* webpackChunkName: "pages/completed" */).then(m => m.default || m)
 const _07ec2eee = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
@@ -57,6 +58,11 @@ export function createRouter () {
 			path: "/about",
 			component: _475be478,
 			name: "about"
+		},
+		{
+			path: "/completed",
+			component: _bd67abfc,
+			name: "completed"
 		},
 		{
 			path: "/",
