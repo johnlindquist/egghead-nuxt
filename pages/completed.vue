@@ -1,27 +1,23 @@
 <template>
-  <section class="p-4">
-    <h2>Todos</h2>
+  <section>
+    <h2 class="flex justify-center">Todos</h2>
     <ul class="list-reset text-lg">
-      <li :key="todo.id" v-for="todo of completedTodos">
+      <li class="px-4 py-1" :key="todo.id" v-for="todo of completedTodos">
         {{todo.text}}
       </li>
     </ul>
+
   </section>
 </template>
 <script>
-import {
-  mapGetters,
-  mapActions,
-  mapMutations
-} from "vuex"
+import { mapGetters, mapActions } from "vuex"
 
 export default {
   computed: {
     ...mapGetters(["completedTodos"])
   },
   methods: {
-    ...mapActions([]),
-    ...mapMutations(["toggle"])
+    ...mapActions([])
   }
 }
 </script>
