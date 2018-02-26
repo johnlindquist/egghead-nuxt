@@ -1,7 +1,10 @@
 <template>
   <section class="p-4">
     <h2>Todos {{text}}</h2>
-    <form><input type="text" v-model="text"></form>
+    <form @submit.prevent="add">
+      <input type="text" v-model="text">
+      <input type="submit">
+    </form>
     <fieldset class="list-reset text-lg">
       <div :key="todo.id" v-for="todo of todos" class="pt-1">
         <input type="checkbox" :id="todo.id" :checked="todo.done" @change="toggle(todo)" class="opacity-0">
@@ -31,7 +34,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["toggle"]),
+    ...mapActions(["toggle", "add"]),
     ...mapMutations([])
   }
 }

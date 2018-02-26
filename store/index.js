@@ -14,6 +14,9 @@ export const mutations = {
     state.todos = state.todos.map(
       t => (t.id === todo.id ? todo : t)
     )
+  },
+  addTodo(state, todo) {
+    state.todos.push(todo)
   }
 }
 
@@ -37,5 +40,13 @@ export const actions = {
       { done: !todo.done }
     )
     commit("toggle", response)
+  },
+  async add({ state, commit }) {
+    const response = await this.$axios.$post(
+      "http://localhost:3777/todos/",
+      { text: state.text, done: false }
+    )
+
+    commit("addTodo", response)
   }
 }
