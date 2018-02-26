@@ -6,7 +6,9 @@
         {{todo.text}}
       </li>
     </ul>
-
+    <div class="flex justify-center">
+      <button @click="clear" class="px-4 py-2 bg-grey rounded hover:bg-grey-light hover:text-red hover:font-extrabold">Clear</button>
+    </div>
   </section>
 </template>
 <script>
@@ -17,7 +19,7 @@ export default {
     ...mapGetters(["completedTodos"])
   },
   methods: {
-    ...mapActions([])
+    ...mapActions(["clear"])
   }
 }
 </script>

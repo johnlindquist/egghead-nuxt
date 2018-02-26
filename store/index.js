@@ -22,6 +22,14 @@ export const mutations = {
   },
   addTodo(state, todo) {
     state.todos.push(todo)
+  },
+  clear(state, todos) {
+    state.todos = state.todos.filter(
+      t => !todos.includes(t)
+    )
+  },
+  clearText(state) {
+    state.text = ""
   }
 }
 
@@ -53,5 +61,15 @@ export const actions = {
     )
 
     commit("addTodo", response)
+    commit("clearText")
+  },
+  async clear({ getters, commit }) {
+    for (let todo of getters.completedTodos) {
+      await this.$axios.$delete(
+        "http://localhost:3777/todos/" + todo.id
+      )
+    }
+
+    commit("clear", getters.completedTodos)
   }
 }
