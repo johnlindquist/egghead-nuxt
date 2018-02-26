@@ -2,7 +2,7 @@
   <section class="p-4">
     <h2>Todos</h2>
     <ul class="list-reset text-lg">
-      <li :key="todo.id" v-for="todo of todos">
+      <li :key="todo.id" v-for="todo of completedTodos">
         {{todo.text}}
       </li>
     </ul>
@@ -10,17 +10,14 @@
 </template>
 <script>
 import {
-  mapState,
+  mapGetters,
   mapActions,
   mapMutations
 } from "vuex"
 
 export default {
   computed: {
-    ...mapState({
-      todos: state =>
-        state.todos.filter(todo => todo.done)
-    })
+    ...mapGetters(["completedTodos"])
   },
   methods: {
     ...mapActions([]),

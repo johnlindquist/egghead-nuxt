@@ -3,6 +3,11 @@ export const state = () => ({
   text: ""
 })
 
+export const getters = {
+  completedTodos: state =>
+    state.todos.filter(todo => todo.done)
+}
+
 export const mutations = {
   setTodos(state, todos) {
     state.todos = todos
