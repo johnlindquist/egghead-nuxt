@@ -1,8 +1,9 @@
 <template>
   <section class="p-4">
-    <h2>Todos</h2>
+    <h2>Todos {{text}}</h2>
+    <form><input type="text" v-model="text"></form>
     <fieldset class="list-reset text-lg">
-      <div :key="todo.id" v-for="todo of todos">
+      <div :key="todo.id" v-for="todo of todos" class="pt-1">
         <input type="checkbox" :id="todo.id" :checked="todo.done" @change="toggle(todo)" class="opacity-0">
         <label :for="todo.id" class="px-2 cursor-pointer hover:font-bold" :class="{'line-through':todo.done}">{{todo.text}}</label>
         <span v-if="todo.done" class="text-green">✔</span>
@@ -19,7 +20,15 @@ import {
 
 export default {
   computed: {
-    ...mapState(["todos"])
+    ...mapState(["todos"]),
+    text: {
+      get() {
+        return this.$store.state.text
+      },
+      set(value) {
+        this.$store.commit("setText", value)
+      }
+    }
   },
   methods: {
     ...mapActions(["toggle"]),

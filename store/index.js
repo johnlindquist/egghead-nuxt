@@ -1,10 +1,14 @@
 export const state = () => ({
-  todos: []
+  todos: [],
+  text: ""
 })
 
 export const mutations = {
   setTodos(state, todos) {
     state.todos = todos
+  },
+  setText(state, text) {
+    state.text = text
   },
   toggle(state, todo) {
     state.todos = state.todos.map(
